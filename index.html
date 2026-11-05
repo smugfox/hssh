@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hussh: nothing leaves without your yes</title>
+<meta name="description" content="Concept redesign of the hussh landing page. Agent One is a private assistant that asks before it looks.">
+<link rel="preload" href="assets/fonts/redaction-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23EDE31E'/%3E%3Crect x='7' y='7' width='18' height='18' fill='%233415AF'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-answer="none">
+
+<header class="bar">
+  <a class="wordmark" href="#top">hussh</a>
+  <nav class="mono" aria-label="Main">
+    <a href="#products">products</a>
+    <a href="#device">your device</a>
+    <a href="#free">how free works</a>
+    <a href="#ledger">what is live</a>
+  </nav>
+  <p class="copyfield mono">
+    <span class="cf-none">1 request waiting on you</span>
+    <span class="cf-done"><span class="serial"></span> <strong class="cf-word"></strong> <button id="again2" class="linkbtn">answer again</button></span>
+  </p>
+  <a class="btn btn-small" href="https://one.hushh.ai">get agent one</a>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <h1 id="h1">Nothing leaves without your yes.</h1>
+    <p class="lede">Agent One is a private assistant for your bills, inbox and calendar. It asks before it looks. Answer this one.</p>
+
+    <div class="slip" id="slip">
+      <div class="slip-body">
+        <div class="fields">
+          <div class="field"><span class="k mono">1 requester</span><span class="v mono">Agent One</span></div>
+          <div class="field" id="wants"><span class="k mono">2 wants</span><span class="v mono">To read 1 receipt in Gmail</span></div>
+          <div class="field"><span class="k mono">3 scope</span><span class="v mono">For your morning brief, nothing else</span></div>
+          <div class="field"><span class="k mono">4 duration</span><span class="v mono">Once</span></div>
+        </div>
+        <div class="actions" id="actions">
+          <button class="btn btn-line" data-answer="declined">Decline</button>
+          <button class="btn btn-line" data-answer="allowed">Allow once</button>
+        </div>
+      </div>
+      <div class="stub" id="stub">
+        <p class="mono k">your copy</p>
+        <p class="mono serial"></p>
+        <p class="stub-answer">Unanswered</p>
+        <div class="stamp" id="stamp" aria-hidden="true"></div>
+        <p class="mono stub-note"></p>
+        <p class="mono stub-time"></p>
+      </div>
+    </div>
+
+    <aside class="brief" aria-label="Example morning brief">
+      <p class="brief-day">Tuesday morning</p>
+      <div class="brief-item"><span class="k mono">finance</span><p>A $14.99 charge from a streaming service you cancelled in May.</p></div>
+      <div class="brief-item">
+        <span class="k mono">gmail</span>
+        <p class="gated-none mono">waiting on your answer</p>
+        <p class="gated-allowed">Found the receipt for your new tires.</p>
+        <p class="gated-declined"><span class="bar-out" aria-hidden="true"></span><span class="sr-only">Not read. You said no.</span></p>
+      </div>
+      <div class="brief-item"><span class="k mono">calendar</span><p>Your 3:00 call runs into school pickup at 3:30.</p></div>
+      <p class="fine">Example only. Nothing on this page is connected to anything.</p>
+    </aside>
+  </section>
+
+  <section class="strip" aria-label="What just happened">
+    <ol class="steps">
+      <li><strong>Verify</strong><p>The requester proved who it is.</p></li>
+      <li><strong>Choose</strong><p>You saw what it wanted, why, and for how long.</p></li>
+      <li><strong>Share narrowly</strong>
+        <p class="when-none">Nothing yet. It is waiting on you.</p>
+        <p class="when-allowed">One receipt, encrypted. Nothing else moved.</p>
+        <p class="when-declined">Nothing moved.</p></li>
+      <li><strong>Keep a record</strong>
+        <p class="when-none">Your copy is already numbered.</p>
+        <p class="when-allowed when-declined">You hold <span class="serial"></span>. You can end access any time.</p></li>
+    </ol>
+    <p class="fine">That was PCHP, the consent protocol under everything hussh makes. The spec is public. It is not an approved standard. <a href="https://www.hussh.si/pchp">Read the spec</a></p>
+  </section>
+
+  <section class="part" id="products" aria-labelledby="p3">
+    <h2 id="p3">Everything we make asks the same four questions before it does anything.</h2>
+    <div class="table" role="table" aria-label="Requests by product">
+      <div class="row head mono" role="row"><span role="columnheader">product</span><span role="columnheader">1 requester</span><span role="columnheader">2 wants</span><span role="columnheader">3 scope</span><span role="columnheader">4 duration</span></div>
+      <a class="row" role="row" href="https://www.hussh.si/one/tag"><span role="cell"><strong>Tag One</strong><em class="mono">not built yet</em></span><span role="cell" class="mono">You</span><span role="cell" class="mono">To see where Sam is</span><span role="cell" class="mono">Only when Sam agrees</span><span role="cell" class="mono">Until Sam says stop</span></a>
+      <a class="row" role="row" href="https://www.hussh.si/marketplace"><span role="cell"><strong>Marketplace</strong><em class="mono">partly live</em></span><span role="cell" class="mono">A buyer</span><span role="cell" class="mono">Your zip code</span><span role="cell" class="mono">One detail, at your price</span><span role="cell" class="mono">Until you revoke it</span></a>
+      <a class="row" role="row" href="https://www.hussh.si/developers/mcp"><span role="cell"><strong>Your other AI</strong><em class="mono">api and mcp</em></span><span role="cell" class="mono">Gemini, ChatGPT, Claude and others</span><span role="cell" class="mono">Context for a task</span><span role="cell" class="mono">Only what you approve</span><span role="cell" class="mono">Set per request</span></a>
+    </div>
+    <p class="fine">Example requests. Sam is made up. Naming an assistant means it can connect, not that it endorses us.</p>
+  </section>
+
+  <section class="carbon" id="device" aria-labelledby="p4">
+    <div class="carbon-copy">
+      <h2 id="p4">Where the work runs</h2>
+      <p class="lede">Your device first. Small, personal jobs stay on your machine. Bigger ones can use the cloud, and it asks. A private log records where each job ran.</p>
+      <dl class="tiers">
+        <div><dt>On your device</dt><dd>Nothing leaves.</dd></div>
+        <div><dt>Split</dt><dd>Only what the task needs is shared.</dd></div>
+        <div><dt>Cloud</dt><dd>Bigger jobs, with your permission.</dd></div>
+      </dl>
+      <a href="https://www.hussh.si/one/puppy">Agent One runs on the computer you own. Puppy One is a laptop with it built in.</a>
+    </div>
+    <figure class="carbon-scan">
+      <figcaption class="mono">fig. 1 puppy one. when idle it can run ai jobs for others, walled off from your files, and earn credits.</figcaption>
+      <svg viewBox="50 8 420 386" role="img" aria-label="Line drawing of Puppy One with an example private log on its screen, listing each job and where it ran">
+        <g fill="none" stroke="currentColor" stroke-width="1.25">
+          <rect x="60" y="14" width="400" height="252" rx="10"/><rect x="74" y="28" width="372" height="224"/>
+          <rect x="60" y="270" width="400" height="256" rx="10"/><rect x="190" y="424" width="140" height="88" rx="4"/>
+          <rect x="80.0" y="292" width="22.0" height="20" rx="2"/><rect x="106.0" y="292" width="22.0" height="20" rx="2"/><rect x="132.0" y="292" width="22.0" height="20" rx="2"/><rect x="158.0" y="292" width="22.0" height="20" rx="2"/><rect x="184.0" y="292" width="22.0" height="20" rx="2"/><rect x="210.0" y="292" width="22.0" height="20" rx="2"/><rect x="236.0" y="292" width="22.0" height="20" rx="2"/><rect x="262.0" y="292" width="22.0" height="20" rx="2"/><rect x="288.0" y="292" width="22.0" height="20" rx="2"/><rect x="314.0" y="292" width="22.0" height="20" rx="2"/><rect x="340.0" y="292" width="22.0" height="20" rx="2"/><rect x="366.0" y="292" width="22.0" height="20" rx="2"/><rect x="392.0" y="292" width="22.0" height="20" rx="2"/><rect x="418.0" y="292" width="22.0" height="20" rx="2"/><rect x="80.0" y="316" width="22.0" height="20" rx="2"/><rect x="106.0" y="316" width="22.0" height="20" rx="2"/><rect x="132.0" y="316" width="22.0" height="20" rx="2"/><rect x="158.0" y="316" width="22.0" height="20" rx="2"/><rect x="184.0" y="316" width="22.0" height="20" rx="2"/><rect x="210.0" y="316" width="22.0" height="20" rx="2"/><rect x="236.0" y="316" width="22.0" height="20" rx="2"/><rect x="262.0" y="316" width="22.0" height="20" rx="2"/><rect x="288.0" y="316" width="22.0" height="20" rx="2"/><rect x="314.0" y="316" width="22.0" height="20" rx="2"/><rect x="340.0" y="316" width="22.0" height="20" rx="2"/><rect x="366.0" y="316" width="22.0" height="20" rx="2"/><rect x="392.0" y="316" width="22.0" height="20" rx="2"/><rect x="418.0" y="316" width="22.0" height="20" rx="2"/><rect x="80.0" y="340" width="24.0" height="20" rx="2"/><rect x="108.0" y="340" width="24.0" height="20" rx="2"/><rect x="136.0" y="340" width="24.0" height="20" rx="2"/><rect x="164.0" y="340" width="24.0" height="20" rx="2"/><rect x="192.0" y="340" width="24.0" height="20" rx="2"/><rect x="220.0" y="340" width="24.0" height="20" rx="2"/><rect x="248.0" y="340" width="24.0" height="20" rx="2"/><rect x="276.0" y="340" width="24.0" height="20" rx="2"/><rect x="304.0" y="340" width="24.0" height="20" rx="2"/><rect x="332.0" y="340" width="24.0" height="20" rx="2"/><rect x="360.0" y="340" width="24.0" height="20" rx="2"/><rect x="388.0" y="340" width="24.0" height="20" rx="2"/><rect x="416.0" y="340" width="24.0" height="20" rx="2"/><rect x="80.0" y="364" width="26.3" height="20" rx="2"/><rect x="110.3" y="364" width="26.3" height="20" rx="2"/><rect x="140.7" y="364" width="26.3" height="20" rx="2"/><rect x="171.0" y="364" width="26.3" height="20" rx="2"/><rect x="201.3" y="364" width="26.3" height="20" rx="2"/><rect x="231.7" y="364" width="26.3" height="20" rx="2"/><rect x="262.0" y="364" width="26.3" height="20" rx="2"/><rect x="292.3" y="364" width="26.3" height="20" rx="2"/><rect x="322.7" y="364" width="26.3" height="20" rx="2"/><rect x="353.0" y="364" width="26.3" height="20" rx="2"/><rect x="383.3" y="364" width="26.3" height="20" rx="2"/><rect x="413.7" y="364" width="26.3" height="20" rx="2"/><rect x="80.0" y="388" width="36.4" height="20" rx="2"/><rect x="120.4" y="388" width="36.4" height="20" rx="2"/><rect x="160.9" y="388" width="36.4" height="20" rx="2"/><rect x="201.3" y="388" width="36.4" height="20" rx="2"/><rect x="241.8" y="388" width="36.4" height="20" rx="2"/><rect x="282.2" y="388" width="36.4" height="20" rx="2"/><rect x="322.7" y="388" width="36.4" height="20" rx="2"/><rect x="363.1" y="388" width="36.4" height="20" rx="2"/><rect x="403.6" y="388" width="36.4" height="20" rx="2"/>
+        </g>
+        <g class="log" fill="currentColor">
+          <text x="88" y="54">private log</text><text x="432" y="54" text-anchor="end">example</text>
+          <path d="M82 66H438" stroke="currentColor" stroke-width=".75" fill="none"/>
+          <text class="t" x="88" y="86">6:58 am</text><text class="j" x="150" y="86">Calendar, today</text><text x="432" y="86" text-anchor="end">on this device</text>
+          <rect x="82" y="97" width="356" height="32"/>
+          <g class="log-you">
+            <text class="t" x="88" y="118">7:00 am</text><text class="j" x="150" y="118">Gmail, 1 receipt</text>
+            <text x="432" y="118" text-anchor="end" class="when-none">waiting on you</text>
+            <text x="432" y="118" text-anchor="end" class="when-allowed">on this device</text>
+            <text x="432" y="118" text-anchor="end" class="when-declined">not read</text>
+          </g>
+          <text class="t" x="88" y="150">7:12 am</text><text class="j" x="150" y="150">Flight prices</text><text x="432" y="150" text-anchor="end">split</text>
+          <text class="t" x="88" y="182">7:40 am</text><text class="j" x="150" y="182">Trip plan</text><text x="432" y="182" text-anchor="end">cloud, you approved</text>
+          <text x="88" y="236" class="when-none">your answer lands in this log</text>
+          <text x="88" y="236" class="when-allowed when-declined">your copy <tspan class="serial"></tspan></text>
+        </g>
+      </svg>
+    </figure>
+  </section>
+
+  <section class="quiet" id="free" aria-labelledby="p5">
+    <h2 id="p5">We do not sell your data, your attention, or your contacts.</h2>
+    <p class="quiet-list">Agent One is free for every American. Puppy One hardware, business customers and a founder-backed research fund pay for it.</p>
+  </section>
+
+  <section class="part" id="ledger" aria-labelledby="p6">
+    <h2 id="p6">What is live and what is not</h2>
+    <div class="table ledger" role="table" aria-label="What is live and what is not">
+      <div class="row head mono" role="row"><span role="columnheader">item</span><span role="columnheader">state</span><span role="columnheader">plain note</span></div>
+      <div class="row" role="row"><span role="cell"><strong>Agent One</strong></span><span role="cell" class="mono">live</span><span role="cell">Available now, no paid tier planned</span></div>
+      <div class="row" role="row"><span role="cell"><strong>Marketplace profile and lock</strong></span><span role="cell" class="mono">live</span><span role="cell">Prices, requests and payouts are in design</span></div>
+      <div class="row" role="row"><span role="cell"><strong>PCHP</strong></span><span role="cell" class="mono">published</span><span role="cell">A spec, not an approved standard</span></div>
+      <div class="row" role="row"><span role="cell"><strong>Tag One</strong></span><span role="cell" class="mono">not built</span><span role="cell">Described publicly, not shipping</span></div>
+      <div class="row" role="row"><span role="cell"><strong>Outside security review</strong></span><span role="cell" class="mono">planned</span><span role="cell">Target 2027</span></div>
+      <div class="row" role="row"><span role="cell"><strong>FedRAMP High</strong></span><span role="cell" class="mono">not held</span><span role="cell">In pursuit</span></div>
+    </div>
+    <p class="fine">Dates in the future are targets, not promises. <a href="https://www.hussh.si/open">We publish our plans, our changes and our mistakes.</a></p>
+  </section>
+
+  <section class="sign" aria-labelledby="p7">
+    <h2 id="p7" class="sr-only">Sign here</h2>
+    <blockquote>The asymmetry was not a bug. It was the business model.</blockquote>
+    <div class="sigrow">
+      <div class="sig"><p class="sigfounder">Manish Sainani, founder. His identity was stolen in 2021. <a href="https://www.hussh.si/company">Why hussh exists</a></p><p class="sigline mono">signed</p></div>
+      <div class="sig"><a class="btn" href="https://one.hushh.ai">Get Agent One, free</a><p class="sigline mono">you</p></div>
+    </div>
+  </section>
+
+  <footer class="foot mono">
+    <span>concept redesign for the hussh design task. draft copy. not the live site.</span>
+    <a href="https://mrkitsune.com">robin, mrkitsune.com</a>
+  </footer>
+</main>
+
+<p class="sr-only" id="live" aria-live="polite"></p>
+<script src="main.js"></script>
+</body>
+</html>
